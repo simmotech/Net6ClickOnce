@@ -5,7 +5,7 @@
 // It will then be used for future ClickOnce deployments
 
 using System;
-using System.Deployment.Application;
+using System.Deployment.Application; // This is added
 using System.Diagnostics;
 using System.Threading;
 
@@ -27,6 +27,7 @@ namespace Microsoft.Deployment.Launcher
 		              UseShellExecute = false
 	              };
 
+            #region This section is added everything else is from the clickonce\launcher folder from the Microsoft deployment-tools repo -------
 	        // From ApplicationDeployment which is not available in .NET 6!
 	        AddLocalEnvironmentVariable("CLICKONCE_ISNETWORKDEPLOYED", ApplicationDeployment.IsNetworkDeployed.ToString());
 	        AddLocalEnvironmentVariable("CLICKONCE_CURRENTVERSION", ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString());
@@ -52,6 +53,7 @@ namespace Microsoft.Deployment.Launcher
 
 		        psi.EnvironmentVariables[name] = value;
 	        }
+			#endregion
         }
 
         /// <summary>
