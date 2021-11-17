@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+
+    <PublishTrimmed>true</PublishTrimmed>
+
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+
+    <FileVersion>1.0.0.1</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn />
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Git\Framework\Framework\ClickOnce\ClickOnceInfo.cs" Link="ClickOnceInfo.cs" />
+  </ItemGroup>
+
+</Project>
